@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book 1, Proposition 1</title>
+        <link rel="stylesheet" href="../../styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="../../index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a href="./book1/index.html">Book 1</a></button>
+                <div class="dropdown-content">
+                    <a href="">Definitions</a>
+                    <a href="">Postulates</a>
+                    <a href="">Common Notions</a>
+                    <a href="">Propositions</a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="title">
+                <h1>Proposition 1</h1>
+            </div>
+            <div class="setup"></div>
+            <div class="diagram">
+                <script type="text/javascript">
+                    
+                    // set up the diagram
+                    var dh = 600
+                    var dw = 800
+                    var draw = SVG().addTo(".diagram").size(dh, dw)
+
+                    // variables used, like radius, anchor point, line length
+                    var r = 100
+                    var d = 2 * r
+                    var xanchor = 300
+                    var yanchor = 300
+                    var lineLength = 100
+                    
+                    // draw the anchor line
+                    var anchorLine = draw.line(0, 0, lineLength, 0).move(xanchor, yanchor).addClass("line")
+
+                    // draw the circles
+                    var c1 = draw.circle(d).center(xanchor, yanchor).addClass('circle')
+                    var c1 = draw.circle(d).center(xanchor+r, yanchor).addClass('circle')
+
+                    // draw the other two sides of the triangle
+                    var side2 = draw.line(xanchor, yanchor, xanchor+r, yanchor).rotate(-60, xanchor, yanchor).addClass("line")
+                    var side3 = draw.line(xanchor, yanchor, xanchor+r, yanchor).rotate(60, xanchor+r, yanchor).addClass("line")
+
+                </script>
+            </div>
+            <div class="proof"></div>
+        </main>
+    </body>
+</html>
